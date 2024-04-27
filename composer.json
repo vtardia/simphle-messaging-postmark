@@ -1,0 +1,35 @@
+{
+    "name": "vtardia/simphle-messaging-postmark",
+    "description": "Postmark transport component for Simphle Messaging",
+    "type": "library",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vtardia/simphle-messaging.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Simphle\\Messaging\\Email\\Provider\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.2",
+        "psr/log": "^3",
+        "vtardia/simphle-messaging": "^1",
+        "wildbit/postmark-php": "^6.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "vimeo/psalm": "^6.x-dev",
+        "squizlabs/php_codesniffer": "^3"
+    },
+    "scripts": {
+        "cs:lint": "phpcs -p --standard=PSR12 --colors src",
+        "cs:fix": "phpcbf -p --standard=PSR12 --colors src",
+        "analyze": "psalm --no-cache",
+        "analyze:deep": "psalm --show-info=true --no-cache"
+    }
+}
